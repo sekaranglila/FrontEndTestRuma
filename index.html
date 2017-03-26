@@ -21,115 +21,40 @@
 
 		<!-- To Do List -->
 		<div class="container">
-			<div id="task-low">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					    <h3 class="panel-title" id = "task-title">Task Title</h3>
-					</div>
-					<div class="panel-body">
-						<div id="task-date"> dd/mm/yyyy </div> <br>
-						<div id="task-desc"> Body </div> <br> <br>
-						<label class="checkbox-inline">
-							<input type="checkbox" value="Done">Done
-						</label>
-						<div class="btn-group btn-group-sm pull-right">
-							<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editTask">EDIT</button>
-							<button type="button" class="btn btn-danger" onclick="removepanel()">DELETE</button>
+			<div class="jumbotron">
+				<h2 class="text-center">ADD TO DO TASK</h2>
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="task-title">Title:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="task-title" placeholder="Enter task title">
 						</div>
 					</div>
-				</div>
-			</div>
-			<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#addTask">ADD TASK</button>
-
-			<!-- Modal Add Task-->
-			<div id="addTask" class="modal fade" role="dialog">
-				<div class="modal-dialog">
-					<!-- Modal content-->
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h4 class="modal-title"> Add Task</h4>
-						</div>
-						<div class="modal-body">
-							<form class="form-horizontal">
-								<div class="form-group">
-									<label class="control-label col-sm-2" for="task-title">Title:</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control" id="task-title" placeholder="Enter task title">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="control-label col-sm-2" for="task-date">Date:</label>
-									<div class="col-sm-10"> 
-										<input type="text" class="form-control" id="task-date" placeholder="dd/mm/yy - dd/mm/yy">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="control-label col-sm-2" for="task-desc">Description:</label>
-									<div class="col-sm-10"> 
-										<textarea class="form-control" rows="5" id="task-desc"></textarea>
-									</div>
-								</div>
-								<div class="form-group"> 
-									<label class="control-label col-sm-2" for="priority">Priority:</label>
-									<div class="col-sm-10"> 
-										<input type="text" class="form-control" id="priority" placeholder="High/Medium/Low">
-									</div>
-								</div>
-							</form>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal" onclick="addTask()">Add</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="task-date">Date:</label>
+						<div class="col-sm-10"> 
+							<input type="text" class="form-control" id="task-date" placeholder="dd/mm/yy - dd/mm/yy">
 						</div>
 					</div>
-				</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="task-desc">Description:</label>
+						<div class="col-sm-10"> 
+							<textarea class="form-control" rows="5" id="task-desc"></textarea>
+						</div>
+					</div>
+					<div class="form-group"> 
+						<label class="control-label col-sm-2" for="priority">Priority:</label>
+						<div class="col-sm-10"> 
+							<input type="text" class="form-control" id="priority" placeholder="High/Medium/Low">
+						</div>
+					</div>
+				</form>
+				<button type="button" class="btn btn-success btn-block" onclick="addTask()">ADD TASK</button>
 			</div>
 
-			<!-- Modal Edit Task-->
-			<div id="editTask" class="modal fade" role="dialog">
-				<div class="modal-dialog">
-					<!-- Modal content-->
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h4 class="modal-title"> Edit Task</h4>
-						</div>
-						<div class="modal-body">
-							<form class="form-horizontal">
-								<div class="form-group">
-									<label class="control-label col-sm-2" for="task-title">Title:</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control" id="task-title" placeholder="Enter task title">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="control-label col-sm-2" for="task-date">Date:</label>
-									<div class="col-sm-10"> 
-										<input type="text" class="form-control" id="task-date" placeholder="dd/mm/yy - dd/mm/yy">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="control-label col-sm-2" for="task-desc">Description:</label>
-									<div class="col-sm-10"> 
-										<textarea class="form-control" rows="5" id="task-desc"></textarea>
-									</div>
-								</div>
-								<div class="form-group"> 
-									<label class="control-label col-sm-2" for="priority">Priority:</label>
-									<div class="col-sm-10"> 
-										<input type="text" class="form-control" id="priority" placeholder="High/Medium/Low">
-									</div>
-								</div>
-							</form>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Edit</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						</div>
-					</div>
-				</div>
-			</div>
+			<ul id="task">
+				
+			</ul>
 		</div>
 		<!-- Scripts -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
