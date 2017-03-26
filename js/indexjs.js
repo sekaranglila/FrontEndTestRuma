@@ -1,3 +1,7 @@
+var data =  (localStorage.getItem('todo')) ? JSON.parse(localStorage.getItem('todo')): {
+  todo : [],
+}
+
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
 var i;
@@ -39,6 +43,12 @@ function addTask() {
 	var date = document.getElementById("task-date").value;
 	var desc = document.getElementById("task-desc").value;
 	var priority = document.getElementById("priority").value;
+
+	var item = [title, date, desc, priority];
+    data.todo.push(item);
+    localStorage.setItem('todo', JSON.stringify(data));
+
+    console.log(data);
 	
 	//create text node
 	var t = document.createTextNode(title);
