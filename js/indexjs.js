@@ -27,6 +27,10 @@ list.addEventListener('click', function(ev) {
 	}
 }, false);
 
+function editTask(){
+	console.log("edit");
+}
+
 // Create a new list item when clicking on the "Add" button
 function addTask() {
 	//Kamus Lokal
@@ -44,6 +48,9 @@ function addTask() {
 	var br = document.createElement("br");
 
 	li.appendChild(t);
+	li.appendChild(br);
+	var br = document.createElement("br");
+	li.appendChild(br);
 	if (title === '') {
 		alert("You must write the task title!");
 	} else {
@@ -51,7 +58,9 @@ function addTask() {
 	}
 	document.getElementById("task-title").value = "";
 
+	var br = document.createElement("br");
 	li.appendChild(td);
+	li.appendChild(br);
 	if (date === '') {
 		alert("You must write the date of task!");
 	} else {
@@ -59,7 +68,9 @@ function addTask() {
 	}
 	document.getElementById("task-date").value = "";
 
+	var br = document.createElement("br");
 	li.appendChild(d);
+	li.appendChild(br);
 	if (desc === '') {
 		alert("You must write task description!");
 	} else {
@@ -67,13 +78,23 @@ function addTask() {
 	}
 	document.getElementById("task-desc").value = "";
 
+	var br = document.createElement("br");
 	li.appendChild(p);
+	li.appendChild(br);
+	var br = document.createElement("br");
+	li.appendChild(br);
 	if (priority === '') {
 		alert("You must write the task priority!");
 	} else {
 		document.getElementById("task").appendChild(li);
 	}
 	document.getElementById("priority").value = "";
+
+	var btn = document.createElement("BUTTON");        
+	btn.innerHTML = "EDIT";  
+	btn.className = "btn btn-warning";
+	btn.onclick = editTask();
+	li.appendChild(btn);
 
 	var span = document.createElement("SPAN");
 	var txt = document.createTextNode("\u00D7");
